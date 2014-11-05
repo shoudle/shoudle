@@ -6,5 +6,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="libs/SdImSdk.jar" sourcepath="/SdImSdk"/>
+	<classpathentry kind="lib" path="libs/asmack-android-6.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

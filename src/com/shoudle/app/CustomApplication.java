@@ -1,6 +1,6 @@
 package com.shoudle.app;
 
-import cn.shoudle.im.SdChat;
+import cn.shoudle.im.v1.SdChat;
 import android.app.Application;
 
 public class CustomApplication extends Application{

@@ -1,6 +1,6 @@
 package com.shoudle.ui;
 
-import cn.shoudle.im.SdUserManager;
+import cn.shoudle.im.v1.SdUserManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;

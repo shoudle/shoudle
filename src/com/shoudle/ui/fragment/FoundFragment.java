@@ -5,6 +5,6 @@ package com.shoudle.ui.fragment;
  * @author Render;
  *
  */
-public class FoundFragment {
+public class FoundFragment extends BaseFragment{
 
 }

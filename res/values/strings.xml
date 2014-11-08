@@ -24,4 +24,9 @@
     <string name="login_email">确认密码 </string>
     <string name="login_email_hint">请在此输入密码&#8230;</string>
     
+    <string name="main_tab_shoudle">擦肩</string>
+    <string name="main_tab_message">消息</string>
+    <string name="main_tab_found">发现</string>
+    <string name="main_tab_profile">个人</string>
+    
 </resources>

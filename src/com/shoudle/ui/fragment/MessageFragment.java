@@ -5,6 +5,6 @@ package com.shoudle.ui.fragment;
  * @author Render;
  *
  */
-public class MessageFragment {
+public class MessageFragment extends BaseFragment{
 
 }

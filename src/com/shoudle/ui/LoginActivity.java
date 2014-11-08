@@ -1,11 +1,11 @@
 package com.shoudle.ui;
 
 import cn.shoudle.listener.SaveListener;
+import cn.shoudle.util.NetWorkUtil;
 import cn.shoudle.util.SdLog;
-import cn.shoudle.v1.SdConstants;
+import cn.shoudle.im.v1.SdConstants;
 
 import com.mr.shoudle.R;
-import com.shoudle.util.NetWorkUtils;
 
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -58,7 +58,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener{
 			Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
 			startActivity(intent);
 		} else {
-			boolean isNetConnected = NetWorkUtils.isNetworkAvailable(this);
+			boolean isNetConnected = NetWorkUtil.isNetworkAvailable(this);
 			if(!isNetConnected){
 				ShowToast(R.string.network_tips);
 				return;

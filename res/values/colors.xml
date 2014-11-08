@@ -8,5 +8,7 @@
     <color name="gray">#9fa0a0</color>
     <color name="blue">#489cfa</color>
     <color name="black">#3e3e39</color>
+    <color name="main_tab_text_normal">#000000</color>
+    <color name="main_tab_text_press">#6CBB52</color>
     
 </resources>

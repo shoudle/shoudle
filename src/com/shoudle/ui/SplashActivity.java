@@ -2,9 +2,8 @@ package com.shoudle.ui;
 
 import com.mr.shoudle.R;
 
-import cn.shoudle.im.SdUserManager;
 import cn.shoudle.util.PreferenceUtils;
-import cn.shoudle.v1.SdConstants;
+import cn.shoudle.im.v1.SdConstants;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;

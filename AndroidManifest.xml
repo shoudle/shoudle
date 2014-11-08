@@ -29,7 +29,7 @@
 
         <!-- 注册服务 和广播 -->
         <service
-            android:name="cn.shoudle.service.SdService"
+            android:name="cn.shoudle.push.SdService"
             android:enabled="true" >
         </service>
 

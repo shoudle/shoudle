@@ -2,12 +2,16 @@ package com.shoudle.ui;
 
 import cn.shoudle.listener.SaveListener;
 import cn.shoudle.util.SdLog;
+import cn.shoudle.v1.SdConstants;
 
-import com.shoudle.im.R;
+import com.mr.shoudle.R;
 import com.shoudle.util.NetWorkUtils;
 
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -22,14 +26,23 @@ public class LoginActivity extends BaseActivity implements OnClickListener{
 	private Button btn_login;
 	private TextView btn_register;
 	
+	private MyBroadcastReceiver receiver = new MyBroadcastReceiver();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		
 		init();
+		
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(SdConstants.CONS_ACTION_REGISTER_SUCCESS_FINISH);
+		registerReceiver(receiver, filter);
 	}
 	
+	/**
+	 * 初始化界面;
+	 */
 	private void init() {
 		et_username = (EditText) findViewById(R.id.et_username);
 		et_password = (EditText) findViewById(R.id.et_password);
@@ -42,8 +55,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		if (v == btn_register) {
-			//Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-			//startActivity(intent);
+			Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+			startActivity(intent);
 		} else {
 			boolean isNetConnected = NetWorkUtils.isNetworkAvailable(this);
 			if(!isNetConnected){
@@ -80,7 +93,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener{
 
 			@Override
 			public void onSuccess() {
-				// TODO Auto-generated method stub
+				
 				runOnUiThread(new Runnable() {
 
 					@Override
@@ -108,4 +121,20 @@ public class LoginActivity extends BaseActivity implements OnClickListener{
 	protected void onDestroy() {
 		super.onDestroy();
 	}
+	
+	/**
+	 * 接受注册完成后接受消息关闭登录Activity;
+	 * @author Render;
+	 *
+	 */
+	public class MyBroadcastReceiver extends BroadcastReceiver {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			if (intent != null && SdConstants.CONS_ACTION_REGISTER_SUCCESS_FINISH.equals(intent.getAction())) {
+				finish();
+			}
+		}
+	}
+	
 }

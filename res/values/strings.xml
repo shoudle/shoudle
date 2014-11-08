@@ -16,5 +16,12 @@
     <string name="network_tips">当前网络不可用,请检查您的网络!</string>
     <string name="error_password_null">密码不能为空</string>
     <string name="error_username_null">用户名不能为空</string>
+    <string name="error_comfirm_password">输入的两次密码不一致</string>
+    
+    <string name="title_activity_register">用户注册</string>
+ 	<string name="login_account">账号 </string>
+    <string name="login_pwd">密码 </string>
+    <string name="login_email">确认密码 </string>
+    <string name="login_email_hint">请在此输入密码&#8230;</string>
     
 </resources>

@@ -1,9 +1,13 @@
 package com.shoudle.ui;
 
-import com.shoudle.im.R;
+import cn.shoudle.util.PreferenceUtils;
+import cn.shoudle.v1.SdConstants;
+
+import com.mr.shoudle.R;
+
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.text.TextUtils;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -11,30 +15,19 @@ public class MainActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		/*if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}*/
+		autoLogin();
+		
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+	/**
+	 * 主界面后自动登录;
+	 */
+	private void autoLogin(){
+		
+		String userName=PreferenceUtils.getPrefString(this, SdConstants.CONS_ACCOUNT,"");
+		String password=PreferenceUtils.getPrefString(this, SdConstants.CONS_PASSWORD,"");
+		
+		if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(password)){
+			mSdUserManager.login(userName, password,null);
 		}
-		return super.onOptionsItemSelected(item);
 	}
 }

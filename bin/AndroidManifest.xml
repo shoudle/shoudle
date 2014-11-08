@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shoudle.im"
+    package="com.mr.shoudle"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -28,7 +28,10 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
 
         <!-- 注册服务 和广播 -->
-        <service android:name="cn.shoudle.service.SdService" />
+        <service
+            android:name="cn.shoudle.service.SdService"
+            android:enabled="true" >
+        </service>
 
         <receiver android:name="cn.shoudle.push.SdBroadcastReceiver" >
             <intent-filter>
@@ -54,6 +57,10 @@
         <activity
             android:name="com.shoudle.ui.LoginActivity"
             android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.shoudle.ui.RegisterActivity"
+            android:label="@string/title_activity_register" >
         </activity>
     </application>
 
